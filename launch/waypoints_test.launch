@@ -1,5 +1,6 @@
 <launch>
     <include file="$(find iarc7_simulator)/launch/morse.launch" />
+    <include file="$(find iarc7_safety)/launch/sim_iarc7_safety.launch" />
     <include file="$(find iarc7_motion)/launch/sim_low_level_motion.launch" />
     <node name="waypoints_test" pkg="iarc7_motion" type="waypoints_test.py" />
 </launch>
