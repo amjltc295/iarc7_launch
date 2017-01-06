@@ -1,0 +1,9 @@
+<launch>
+    <include file="$(find iarc7_safety)/launch/iarc7_safety.launch">
+        <arg name="bondIds" default="['fc_comms_msp', 'motors_test']"/>
+    </include>
+
+    <include file="$(find iarc7_fc_comms)/launch/fc_comms_msp.launch" />
+
+    <node name="motors_test" pkg="iarc7_fc_comms" type="motors_test.py" />
+</launch>
