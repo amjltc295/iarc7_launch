@@ -1,0 +1,8 @@
+<launch>
+    <node name="robot_localization"
+          pkg="robot_localization"
+          type="ekf_localization_node">
+        <rosparam command="load"
+                  file="$(find iarc7_launch)/params/robot_localization_config.yaml" />
+    </node>
+</launch>
