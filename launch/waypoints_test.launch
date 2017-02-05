@@ -5,7 +5,9 @@
         <arg name="bondIds" default="['low_level_motion', 'motion_planner']"/>
     </include>
 
-    <include file="$(find iarc7_motion)/launch/sim_low_level_motion.launch" />
+    <include file="$(find iarc7_motion)/launch/low_level_motion.launch">
+        <arg name="platform" value="sim" />
+    </include>
 
     <node name="waypoints_test" pkg="iarc7_motion" type="waypoints_test.py" />
 </launch>
