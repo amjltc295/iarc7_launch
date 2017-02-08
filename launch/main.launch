@@ -1,0 +1,40 @@
+<launch>
+    <arg name="sim" default="false" doc="true if we are running in the sim" />
+
+    <arg name="bondIds" doc="list of names of nodes to require bonds with"
+        default="[
+            'fc_comms_msp',
+            'low_level_motion'
+            ]"
+        unless="$(arg sim)" />
+    <arg name="bondIds" doc="list of names of nodes to require bonds with"
+        default="[
+            'low_level_motion'
+            ]"
+        if="$(arg sim)" />
+
+    <!-- if we're in the sim -->
+    <group if="$(arg sim)">
+        <include file="$(find iarc7_simulator)/launch/morse.launch" />
+        <include file="$(find iarc7_simulator)/launch/static_transforms_sim.launch" />
+    </group>
+    <!-- else -->
+    <group unless="$(arg sim)">
+        <include file="$(find iarc7_fc_comms)/launch/fc_comms_msp.launch" />
+        <include file="$(find iarc7_sensors)/launch/altimeter.launch" />
+        <include file="$(find iarc7_launch)/launch/static_transforms.launch" />
+    </group>
+    <!-- endif -->
+
+    <include file="$(find iarc7_launch)/launch/localization.launch" />
+
+    <include file="$(find iarc7_safety)/launch/iarc7_safety.launch">
+        <arg name="bondIds" value="$(arg bondIds)" />
+    </include>
+
+    <include file="$(find iarc7_motion)/launch/low_level_motion.launch">
+        <arg name="platform" value="0.05" unless="$(arg sim)" />
+        <arg name="platform" value="sim" if="$(arg sim)" />
+    </include>
+
+</launch>
