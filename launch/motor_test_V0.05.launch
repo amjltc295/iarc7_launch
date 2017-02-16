@@ -5,5 +5,5 @@
 
     <include file="$(find iarc7_fc_comms)/launch/fc_comms_msp.launch" />
 
-    <node name="motors_test" pkg="iarc7_fc_comms" type="motors_test.py" />
+    <node name="motors_test" pkg="iarc7_fc_comms" type="motors_test.py" output="screen"/>
 </launch>
