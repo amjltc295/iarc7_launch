@@ -11,6 +11,7 @@
         <arg name="platform" value="sim" />
     </include>
 
-
     <include file="$(find iarc7_motion)/launch/motion_planner.launch"/>
+
+    <node name="test_motion_planner" pkg="iarc7_motion" type="test_motion_planner.py" />
 </launch>
