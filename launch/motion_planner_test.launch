@@ -4,7 +4,7 @@
     <include file="$(find iarc7_simulator)/launch/morse.launch" />
 
     <include file="$(find iarc7_safety)/launch/iarc7_safety.launch">
-        <arg name="bondIds" default="['low_level_motion']"/>
+        <arg name="bondIds" default="['low_level_motion', 'motion_planner']"/>
     </include>
 
     <include file="$(find iarc7_motion)/launch/low_level_motion.launch">
