@@ -4,12 +4,14 @@
     <arg name="bondIds" doc="list of names of nodes to require bonds with"
         default="[
             'fc_comms_msp',
-            'low_level_motion'
+            'low_level_motion',
+            'motion_planner'
             ]"
         unless="$(arg sim)" />
     <arg name="bondIds" doc="list of names of nodes to require bonds with"
         default="[
-            'low_level_motion'
+            'low_level_motion',
+            'motion_planner'
             ]"
         if="$(arg sim)" />
 
