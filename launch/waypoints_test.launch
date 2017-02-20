@@ -1,3 +1,4 @@
+<!-- Requres ground truth localization turned on in the simulator -->
 <launch>
     <include file="$(find iarc7_simulator)/launch/static_transforms_sim.launch" />
 
