@@ -1,7 +1,5 @@
 <!-- Requres ground truth localization turned on in the simulator -->
 <launch>
-    <include file="$(find iarc7_simulator)/launch/static_transforms_sim.launch" />
-
     <include file="$(find iarc7_simulator)/launch/morse.launch" />
 
     <include file="$(find iarc7_safety)/launch/iarc7_safety.launch">
