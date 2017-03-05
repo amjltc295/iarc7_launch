@@ -20,7 +20,6 @@
     <!-- if we're in the sim -->
     <group if="$(arg sim)">
         <include file="$(find iarc7_simulator)/launch/morse.launch" />
-        <include file="$(find iarc7_simulator)/launch/static_transforms_sim.launch" />
     </group>
     <!-- else -->
     <group unless="$(arg sim)">
