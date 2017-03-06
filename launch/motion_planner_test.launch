@@ -7,6 +7,7 @@
         <arg name="sim" value="true" />
     </include>
 
+    <!-- This parameter must be true, overrides whatever's in morse.yaml -->
     <param name="sim/ground_truth_localization" value="true" />
 
     <node name="test_motion_planner" pkg="iarc7_motion" type="test_motion_planner.py" />
