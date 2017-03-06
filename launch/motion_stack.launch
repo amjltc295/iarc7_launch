@@ -1,0 +1,15 @@
+<launch>
+    <arg name="sim" default="false" doc="true if we are running in the sim" />
+    <arg name="bond_id_namespace" default="safety_bonds" />
+
+    <include file="$(find iarc7_motion)/launch/motion_planner.launch">
+        <arg name="bond_id_namespace" value="$(arg bond_id_namespace)" />
+        <arg name="safety_priority" value="250" />
+    </include>
+
+    <include file="$(find iarc7_motion)/launch/low_level_motion.launch">
+        <arg name="platform" value="0.05" unless="$(arg sim)" />
+        <arg name="platform" value="sim" if="$(arg sim)" />
+        <arg name="safety_priority" value="200" />
+    </include>
+</launch>

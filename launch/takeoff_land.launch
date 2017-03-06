@@ -2,9 +2,9 @@
     <arg name="sim" default="false" doc="true if we are running in the sim" />
 
     <node name="takeoff_land_abstract" pkg="iarc7_abstract" type="takeoff_land.py" />
+    <param name="safety_bonds/takeoff_land_abstract" value="1000" />
 
     <include file="$(find iarc7_launch)/launch/main.launch">
         <arg name="sim" value="$(arg sim)" />
-        <arg name="external_bond_ids" default="'takeoff_land_abstract'" />
     </include>
 </launch>
