@@ -17,6 +17,7 @@
     </group>
     <!-- endif -->
 
+    <rosparam command="delete" param="$(arg bond_id_namespace)" />
     <rosparam command="load"
         file="$(find iarc7_launch)/params/safety_config.yaml" />
     <include file="$(find iarc7_safety)/launch/iarc7_safety.launch">
