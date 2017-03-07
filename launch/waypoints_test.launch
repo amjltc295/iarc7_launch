@@ -5,12 +5,11 @@
 
     <include file="$(find iarc7_motion)/launch/low_level_motion.launch">
         <arg name="platform" value="sim" />
-        <arg name="safety_priority" value="200" />
     </include>
 
     <!-- This parameter must be true, overrides whatever's in morse.yaml -->
     <param name="sim/ground_truth_localization" value="true" />
 
     <node name="waypoints_test" pkg="iarc7_motion" type="waypoints_test.py" />
-    <param name="safety_bonds/motion_planner" value="250" />
+    <param name="safety_bonds/motion_planner/form_bond" value="true" />
 </launch>

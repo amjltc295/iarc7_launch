@@ -10,7 +10,6 @@
     <group unless="$(arg sim)">
         <include file="$(find iarc7_fc_comms)/launch/fc_comms_msp.launch">
             <arg name="bond_id_namespace" value="$(arg bond_id_namespace)" />
-            <arg name="safety_priority" value="50" />
         </include>
 
         <include file="$(find iarc7_sensors)/launch/altimeter.launch" />
@@ -18,6 +17,8 @@
     </group>
     <!-- endif -->
 
+    <rosparam command="load"
+        file="$(find iarc7_launch)/params/safety_config.yaml" />
     <include file="$(find iarc7_safety)/launch/iarc7_safety.launch">
         <arg name="bond_id_namespace" value="$(arg bond_id_namespace)" />
     </include>
