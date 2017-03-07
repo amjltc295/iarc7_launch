@@ -1,16 +1,14 @@
-<!-- Requres ground truth localization turned on in the simulator -->
 <launch>
-    <include file="$(find iarc7_simulator)/launch/morse.launch" />
-
-    <include file="$(find iarc7_safety)/launch/iarc7_safety.launch">
-        <arg name="bondIds" default="['low_level_motion', 'motion_planner']"/>
+    <include file="$(find iarc7_launch)/launch/base_hardware.launch">
+        <arg name="sim" value="true" />
     </include>
 
-    <include file="$(find iarc7_motion)/launch/low_level_motion.launch">
-        <arg name="platform" value="sim" />
+    <include file="$(find iarc7_launch)/launch/motion_stack.launch">
+        <arg name="sim" value="true" />
     </include>
 
-    <include file="$(find iarc7_motion)/launch/motion_planner.launch"/>
+    <!-- This parameter must be true, overrides whatever's in morse.yaml -->
+    <param name="sim/ground_truth_localization" value="true" />
 
     <node name="test_motion_planner" pkg="iarc7_motion" type="test_motion_planner.py" />
 </launch>

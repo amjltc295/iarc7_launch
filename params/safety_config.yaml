@@ -1,0 +1,16 @@
+safety_bonds:
+    fc_comms_msp:
+        form_bond: false
+        priority: 50
+    low_level_motion:
+        form_bond: false
+        priority: 200
+    motion_planner:
+        form_bond: false
+        priority: 250
+    takeoff_land_abstract:
+        form_bond: false
+        priority: 1000
+    motors_test:
+        form_bond: false
+        priority: 1000

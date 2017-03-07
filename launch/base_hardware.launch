@@ -1,0 +1,26 @@
+<launch>
+    <arg name="sim" default="false" doc="true if we are running in the sim" />
+    <arg name="bond_id_namespace" default="safety_bonds" />
+
+    <!-- if we're in the sim -->
+    <group if="$(arg sim)">
+        <include file="$(find iarc7_simulator)/launch/morse.launch" />
+    </group>
+    <!-- else -->
+    <group unless="$(arg sim)">
+        <include file="$(find iarc7_fc_comms)/launch/fc_comms_msp.launch">
+            <arg name="bond_id_namespace" value="$(arg bond_id_namespace)" />
+        </include>
+
+        <include file="$(find iarc7_sensors)/launch/altimeter.launch" />
+        <include file="$(find iarc7_launch)/launch/static_transforms.launch" />
+    </group>
+    <!-- endif -->
+
+    <rosparam command="delete" param="$(arg bond_id_namespace)" />
+    <rosparam command="load"
+        file="$(find iarc7_launch)/params/safety_config.yaml" />
+    <include file="$(find iarc7_safety)/launch/iarc7_safety.launch">
+        <arg name="bond_id_namespace" value="$(arg bond_id_namespace)" />
+    </include>
+</launch>
