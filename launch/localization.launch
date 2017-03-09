@@ -5,4 +5,7 @@
         <rosparam command="load"
                   file="$(find iarc7_launch)/params/robot_localization_config.yaml" />
     </node>
+    <node name="cmd_vel_publisher"
+          pkg="iarc7_motion"
+          type="cmd_vel_publisher.py" />
 </launch>
