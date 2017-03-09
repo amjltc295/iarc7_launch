@@ -7,8 +7,7 @@
         <arg name="platform" value="sim" />
     </include>
 
-    <!-- This parameter must be true, overrides whatever's in morse.yaml -->
-    <param name="sim/ground_truth_localization" value="true" />
+    <include file="$(find iarc7_launch)/launch/localization.launch" />
 
     <node name="waypoints_test" pkg="iarc7_motion" type="waypoints_test.py" />
     <param name="safety_bonds/motion_planner/form_bond" value="true" />
