@@ -102,6 +102,9 @@ world_frame: map            # Defaults to the value of odom_frame if unspecified
 # odom0_twist_rejection_threshold: 1
 ########## END EXAMPLE SENSOR CONFIG ##########
 
+# We fuse each of these twice, once as a position and once as differential to
+# get a velocity
+
 pose0: altimeter_pose
 pose0_config: [false, false, true,
                false, false, false,
@@ -114,17 +117,41 @@ pose0_queue_size: 500
 # pose0_rejection_threshold: 3
 pose0_nodelay: false
 
-pose1: camera_localized_pose
-pose1_config: [true, true, true,
+pose1: altimeter_pose
+pose1_config: [false, false, true,
                false, false, false,
                false, false, false,
                false, false, false,
                false, false, false]
-pose1_differential: false
+pose1_differential: true
 pose1_relative: false
 pose1_queue_size: 500
 # pose1_rejection_threshold: 3
 pose1_nodelay: false
+
+pose2: camera_localized_pose
+pose2_config: [true, true, true,
+               false, false, false,
+               false, false, false,
+               false, false, false,
+               false, false, false]
+pose2_differential: false
+pose2_relative: false
+pose2_queue_size: 500
+# pose2_rejection_threshold: 3
+pose2_nodelay: false
+
+pose3: camera_localized_pose
+pose3_config: [true, true, true,
+               false, false, false,
+               false, false, false,
+               false, false, false,
+               false, false, false]
+pose3_differential: true
+pose3_relative: false
+pose3_queue_size: 500
+# pose3_rejection_threshold: 3
+pose3_nodelay: false
 
 # Whether or not we use the control input during predicition. Defaults to false.
 use_control: false
