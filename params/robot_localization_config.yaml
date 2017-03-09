@@ -126,7 +126,7 @@ pose1_config: [false, false, true,
 pose1_differential: true
 pose1_relative: false
 pose1_queue_size: 500
-# pose1_rejection_threshold: 3
+pose1_rejection_threshold: 15
 pose1_nodelay: false
 
 pose2: camera_localized_pose
@@ -157,23 +157,28 @@ pose3_nodelay: false
 use_control: true
 # Whether the input (assumed to be cmd_vel) is a geometry_msgs/Twist or
 # geometry_msgs/TwistStamped message. Defaults to false.
-stamped_control: true
+stamped_control: false
 # The last issued control command will be used in prediction for this period.
 # Defaults to 0.2.
 control_timeout: 0.1
 # Which velocities are being controlled. Order is vx, vy, vz, vroll, vpitch, vyaw.
 control_config: [true, true, true, false, false, false]
+
 # Places limits on how large the acceleration term will be. Should match your
 # robot's kinematics.
-acceleration_limits: [5.0, 5.0, 10.0, 0.0, 0.0, 0.0]
+#
+# In practice, this controls how strongly the estimate is pulled toward the
+# command velocity.  Higher numbers mean the estimate is pulled more strongly.
+acceleration_limits: [5.0, 5.0, 2.0, 0.0, 0.0, 0.0]
 # Acceleration and deceleration limits are not always the same for robots.
-deceleration_limits: [5.0, 5.0, 10.0, 0.0, 0.0, 0.0]
+deceleration_limits: [5.0, 5.0, 2.0, 0.0, 0.0, 0.0]
+
 # If your robot cannot instantaneously reach its acceleration limit, the
 # permitted change can be controlled with these gains
-acceleration_gains: [10.0, 10.0, 50.0, 0.0, 0.0, 0.0]
+acceleration_gains: [10.0, 10.0, 30.0, 0.0, 0.0, 0.0]
 # If your robot cannot instantaneously reach its deceleration limit, the
 # permitted change can be controlled with these gains
-deceleration_gains: [10.0, 10.0, 50.0, 0.0, 0.0, 0.0]
+deceleration_gains: [10.0, 10.0, 30.0, 0.0, 0.0, 0.0]
 
 # [ADVANCED] The process noise covariance matrix can be difficult to tune, and can vary for each application, so it is
 # exposed as a configuration parameter. This matrix represents the noise we add to the total error after each
