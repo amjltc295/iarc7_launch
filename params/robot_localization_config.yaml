@@ -17,7 +17,7 @@ print_diagnostics: false
 publish_tf: true
 
 # Whether to publish the acceleration state. Defaults to false if unspecified.
-publish_acceleration: false
+publish_acceleration: true
 
 # Whether to fuse angles and angular velocities of 0
 no_rotation_mode: true
@@ -114,7 +114,7 @@ pose0_config: [false, false, true,
 pose0_differential: false
 pose0_relative: false
 pose0_queue_size: 500
-# pose0_rejection_threshold: 3
+pose0_rejection_threshold: 5
 pose0_nodelay: false
 
 pose1: altimeter_pose
@@ -125,8 +125,8 @@ pose1_config: [false, false, true,
                false, false, false]
 pose1_differential: true
 pose1_relative: false
-pose1_queue_size: 500
-pose1_rejection_threshold: 15
+pose1_queue_size: 1000
+pose1_rejection_threshold: 10
 pose1_nodelay: false
 
 pose2: camera_localized_pose
@@ -153,8 +153,23 @@ pose3_queue_size: 500
 # pose3_rejection_threshold: 3
 pose3_nodelay: false
 
+imu0: fc_imu
+imu0_config: [false, false, false,
+              false, false, false,
+              false, false, false,
+              false, false, false,
+              true,  true,  true]
+imu0_nodelay: false
+imu0_differential: false
+imu0_relative: false
+imu0_queue_size: 500
+# imu0_pose_rejection_threshold: 0.8
+# imu0_twist_rejection_threshold: 0.8
+# imu0_linear_acceleration_rejection_threshold: 0.8
+imu0_remove_gravitational_acceleration: true
+
 # Whether or not we use the control input during predicition. Defaults to false.
-use_control: true
+use_control: false
 # Whether the input (assumed to be cmd_vel) is a geometry_msgs/Twist or
 # geometry_msgs/TwistStamped message. Defaults to false.
 stamped_control: true
