@@ -114,7 +114,7 @@ pose0_config: [false, false, true,
 pose0_differential: false
 pose0_relative: false
 pose0_queue_size: 500
-# pose0_rejection_threshold: 3
+pose0_rejection_threshold: 5
 pose0_nodelay: false
 
 pose1: altimeter_pose
@@ -125,8 +125,8 @@ pose1_config: [false, false, true,
                false, false, false]
 pose1_differential: true
 pose1_relative: false
-pose1_queue_size: 500
-pose1_rejection_threshold: 15
+pose1_queue_size: 1000
+pose1_rejection_threshold: 10
 pose1_nodelay: false
 
 pose2: camera_localized_pose
@@ -169,7 +169,7 @@ imu0_queue_size: 500
 imu0_remove_gravitational_acceleration: true
 
 # Whether or not we use the control input during predicition. Defaults to false.
-use_control: true
+use_control: false
 # Whether the input (assumed to be cmd_vel) is a geometry_msgs/Twist or
 # geometry_msgs/TwistStamped message. Defaults to false.
 stamped_control: true
