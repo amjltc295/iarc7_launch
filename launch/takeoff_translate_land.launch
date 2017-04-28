@@ -1,0 +1,10 @@
+<launch>
+    <arg name="sim" default="false" doc="true if we are running in the sim" />
+
+    <node name="takeoff_translate_land_abstract" pkg="iarc7_abstract" type="takeoff_translate_land.py" />
+    <param name="safety_bonds/takeoff_translate_land_abstract/form_bond" value="true" />
+
+    <include file="$(find iarc7_launch)/launch/main.launch">
+        <arg name="sim" value="$(arg sim)" />
+    </include>
+</launch>
