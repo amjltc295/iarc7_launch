@@ -141,18 +141,6 @@ pose2_queue_size: 500
 # pose2_rejection_threshold: 3
 pose2_nodelay: false
 
-# pose3: camera_localized_pose
-# pose3_config: [true, true, true,
-#                false, false, false,
-#                false, false, false,
-#                false, false, false,
-#                false, false, false]
-# pose3_differential: true
-# pose3_relative: false
-# pose3_queue_size: 500
-# # pose3_rejection_threshold: 3
-# pose3_nodelay: false
-
 imu0: fc_imu
 imu0_config: [false, false, false,
               false, false, false,
@@ -209,8 +197,8 @@ process_noise_covariance: [0.05, 0,    0,    0,    0,    0,    0,     0,     0, 
                            0,    0,    0,    0.03, 0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0.03, 0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0,    0.06, 0,     0,     0,    0,    0,    0,    0,    0,    0,
-                           0,    0,    0,    0,    0,    0,    0.025, 0,     0,    0,    0,    0,    0,    0,    0,
-                           0,    0,    0,    0,    0,    0,    0,     0.025, 0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0,    0,    0,    0,    0.60,  0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0,    0,    0,    0,    0,     0.60,  0,    0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0,    0,    0,     0,     0.04, 0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0,    0,    0,     0,     0,    0.01, 0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0.01, 0,    0,    0,    0,
