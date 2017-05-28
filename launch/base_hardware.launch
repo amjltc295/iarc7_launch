@@ -13,7 +13,7 @@
         </include>
 
         <include file="$(find iarc7_sensors)/launch/altimeter.launch" />
-        <include file="$(find iarc7_launch)/launch/static_transforms.launch" />
+        <include file="$(find iarc7_launch)/launch/static_transforms_1.0.launch" />
     </group>
     <!-- endif -->
 
