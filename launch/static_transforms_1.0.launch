@@ -13,7 +13,7 @@
 
     <node name="rplidar_static_pub" pkg="tf2_ros"
         type="static_transform_publisher"
-        args="0 0 -0.042 0 0 0 /quad /base_laser_link" />
+        args="0 0 -0.042 2.356 0 3.1415 /quad /laser" />
 
     <node name="ground_plane_static_pub" pkg="tf2_ros"
         type="static_transform_publisher"
