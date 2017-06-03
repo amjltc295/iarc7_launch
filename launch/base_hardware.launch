@@ -13,7 +13,13 @@
         </include>
 
         <include file="$(find iarc7_sensors)/launch/altimeter.launch" />
-        <include file="$(find iarc7_launch)/launch/static_transforms.launch" />
+        <include file="$(find iarc7_launch)/launch/static_transforms_1.0.launch" />
+
+        <node pkg="rosserial_python" type="serial_node.py"
+            name="teensy_serial">
+            <param name="port" value="/dev/ttyS0" />
+            <param name="baud" value="115200" />
+        </node>
     </group>
     <!-- endif -->
 

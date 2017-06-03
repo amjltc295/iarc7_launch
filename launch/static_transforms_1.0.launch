@@ -1,0 +1,69 @@
+<launch>
+    <node name="center_of_lift_static_pub" pkg="tf2_ros"
+        type="static_transform_publisher"
+        args="0 0 0.095 0 0 0 /quad /center_of_lift" />
+
+    <node name="lidar_static_pub" pkg="tf2_ros"
+        type="static_transform_publisher"
+        args="0.23 0 0.07 0 1.5708 0 /quad /lidarlite" />
+
+    <node name="short_lidar_static_pub" pkg="tf2_ros"
+        type="static_transform_publisher"
+        args="0 0.45 0.0275 0 1.5708 0 /quad /short_distance_lidar" />
+
+    <node name="rplidar_static_pub" pkg="tf2_ros"
+        type="static_transform_publisher"
+        args="0 0 -0.042 2.356 0 3.1415 /quad /laser" />
+
+    <node name="ground_plane_static_pub" pkg="tf2_ros"
+        type="static_transform_publisher"
+        args="0 0 -0.23 0 0 0 /quad /base_footprint" />
+
+    <node name="foot1_static_pub" pkg="tf2_ros"
+        type="static_transform_publisher"
+        args="0.265 0.265 0 0 0 0 /base_footprint /foot1 " />
+
+    <node name="foot2_static_pub" pkg="tf2_ros"
+        type="static_transform_publisher"
+        args="-0.265 0.265 0 0 0 0 /base_footprint /foot2 " />
+
+    <node name="foot3_static_pub" pkg="tf2_ros"
+        type="static_transform_publisher"
+        args="0.265 -0.265 0 0 0 0 /base_footprint /foot3 " />
+
+    <node name="foot4_static_pub" pkg="tf2_ros"
+        type="static_transform_publisher"
+        args="-0.265 -0.265 0 0 0 0 /base_footprint /foot4 " />
+
+    <node name="bottom_camera_static_pub" pkg="tf2_ros"
+        type="static_transform_publisher"
+        args="0 0.256 0.008 0 0 3.1415 /quad /bottom_camera_optical" />
+
+    <node name="front_left_camera_static_pub" pkg="tf2_ros"
+        type="static_transform_publisher"
+        args="0.0898 0.0537 -0.0083
+              -2.356 -1.92 0
+              /quad
+              /front_left_camera_optical" />
+
+    <node name="front_right_camera_static_pub" pkg="tf2_ros"
+        type="static_transform_publisher"
+        args="0.0537 -0.0898 -0.0083
+              2.356 -1.92 0
+              /quad
+              /front_right_camera_optical" />
+
+    <node name="back_left_camera_static_pub" pkg="tf2_ros"
+        type="static_transform_publisher"
+        args="-0.0537 0.0898 -0.0083
+              -0.785 -1.92 0
+              /quad
+              /back_left_camera_optical" />
+
+    <node name="back_right_camera_static_pub" pkg="tf2_ros"
+        type="static_transform_publisher"
+        args="-0.0898 -0.0537 -0.0083
+              0.785 -1.92 0
+              /quad
+              /back_right_camera_optical" />
+</launch>
