@@ -117,16 +117,16 @@ pose0_queue_size: 500
 pose0_rejection_threshold: 5
 pose0_nodelay: false
 
-pose1: altimeter_pose
+pose1: short_distance_lidar_pose
 pose1_config: [false, false, true,
                false, false, false,
                false, false, false,
                false, false, false,
                false, false, false]
-pose1_differential: true
+pose1_differential: false
 pose1_relative: false
-pose1_queue_size: 1000
-pose1_rejection_threshold: 10
+pose1_queue_size: 500
+pose1_rejection_threshold: 5
 pose1_nodelay: false
 
 pose2: camera_localized_pose
@@ -197,8 +197,8 @@ process_noise_covariance: [0.05, 0,    0,    0,    0,    0,    0,     0,     0, 
                            0,    0,    0,    0.03, 0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0.03, 0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0,    0.06, 0,     0,     0,    0,    0,    0,    0,    0,    0,
-                           0,    0,    0,    0,    0,    0,    0.60,  0,     0,    0,    0,    0,    0,    0,    0,
-                           0,    0,    0,    0,    0,    0,    0,     0.60,  0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0,    0,    0,    0,    0.04,  0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0,    0,    0,    0,    0,    0,     0.04,  0,    0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0,    0,    0,     0,     0.04, 0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0,    0,    0,     0,     0,    0.01, 0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0,    0,    0,     0,     0,    0,    0.01, 0,    0,    0,    0,
