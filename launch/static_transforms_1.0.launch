@@ -9,7 +9,7 @@
 
     <node name="short_lidar_static_pub" pkg="tf2_ros"
         type="static_transform_publisher"
-        args="0 0.45 0.0275 0 1.5708 0 /quad /short_distance_lidar" />
+        args="0 0.50 0.0275 0 1.5708 0 /quad /short_distance_lidar" />
 
     <node name="rplidar_static_pub" pkg="tf2_ros"
         type="static_transform_publisher"
