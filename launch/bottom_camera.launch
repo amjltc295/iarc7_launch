@@ -1,0 +1,12 @@
+<launch>
+    <group ns="bottom_camera">
+        <node name="gscam_driver_v4l" pkg="gscam" type="gscam">
+            <param name="camera_name" value="default"/>
+            <param name="gscam_config" value="v4l2src device=/dev/video0 do-timestamp=true ! image/jpeg, width=960, height=720 ! nvjpegdec ! videoconvert"/>
+
+            <param name="use_gst_timestamps" value="true"/>
+            <param name="frame_id" value="/bottom_camera_optical"/>
+            <param name="sync_sink" value="false"/>
+        </node>
+    </group>
+</launch>

@@ -141,6 +141,15 @@ pose2_queue_size: 500
 # pose2_rejection_threshold: 3
 pose2_nodelay: false
 
+twist0: absolute_vel
+twist0_config: [false, false, false,
+                false, false, false,
+                true,  true,  true,
+                false, false, false,
+                false, false, false]
+twist0_queue_size: 3
+twist0_nodelay: false
+
 imu0: fc_imu
 imu0_config: [false, false, false,
               false, false, false,
@@ -191,8 +200,8 @@ deceleration_gains: [10.0, 10.0, 30.0, 0.0, 0.0, 0.0]
 # to be larger, which will cause the filter to trust the incoming measurement more during correction. The values are
 # ordered as x, y, z, roll, pitch, yaw, vx, vy, vz, vroll, vpitch, vyaw, ax, ay, az. Defaults to the matrix below if
 # unspecified.
-process_noise_covariance: [0.05, 0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
-                           0,    0.05, 0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+process_noise_covariance: [0.001, 0,    0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
+                           0,    0.001, 0,    0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
                            0,    0,    0.06, 0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0.03, 0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
                            0,    0,    0,    0,    0.03, 0,    0,     0,     0,    0,    0,    0,    0,    0,    0,
