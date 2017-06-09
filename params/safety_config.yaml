@@ -11,3 +11,5 @@ safety_bonds:
         priority: 1000
     takeoff_translate_land_abstract:
         priority: 1000
+    track_roomba_abstract:
+        priority: 1000
