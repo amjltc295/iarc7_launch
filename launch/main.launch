@@ -15,6 +15,4 @@
     <include file="$(find iarc7_launch)/launch/localization.launch" />
 
     <include file="$(find iarc7_vision)/launch/vision_node.launch" />
-
-    <node name="abs" pkg="iarc7_vision" type="absolute_velocity_from_switches.py" />
 </launch>
