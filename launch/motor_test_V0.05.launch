@@ -3,6 +3,8 @@
         <arg name="sim" value="false" />
     </include>
 
+    <param name="/fc_comms_msp/calibrate_accelerometer" value="false" />
+
     <node name="motors_test" pkg="iarc7_fc_comms" type="motors_test.py" output="screen"/>
     <param name="safety_bonds/motors_test/form_bond" value="true" />
 </launch>
