@@ -21,7 +21,12 @@
             <param name="baud" value="115200" />
         </node>
 
-        <include file="$(find iarc7_launch)/launch/camera.launch" />
+        <include file="$(find iarc7_launch)/launch/camera.launch">
+            <arg name="device_num" value="0" />
+            <arg name="camera_name" value="bottom_camera" />
+            <arg name="image_width" value="1280" />
+            <arg name="image_height" value="720" />
+        </include>
     </group>
     <!-- endif -->
 
