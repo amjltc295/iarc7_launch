@@ -20,6 +20,8 @@
             <param name="port" value="/dev/ttyS0" />
             <param name="baud" value="115200" />
         </node>
+
+        <include file="$(find iarc7_launch)/launch/camera.launch" />
     </group>
     <!-- endif -->
 
@@ -29,8 +31,6 @@
     <include file="$(find iarc7_safety)/launch/iarc7_safety.launch">
         <arg name="bond_id_namespace" value="$(arg bond_id_namespace)" />
     </include>
-
-    <include file="$(find iarc7_launch)/launch/bottom_camera.launch" />
 
     <node name="absolute_vel_from_switches" pkg="iarc7_sensors" type="absolute_velocity_from_switches.py" />
 
