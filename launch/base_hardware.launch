@@ -22,7 +22,7 @@
         </node>
 
         <include file="$(find iarc7_launch)/launch/camera.launch">
-            <arg name="device_num" value="0" />
+            <arg name="device" value="/dev/v4l/by-id/usb-046d_HD_Pro_Webcam_C920_51FE20EF-video-index0" />
             <arg name="camera_name" value="bottom_camera" />
             <arg name="image_width" value="1280" />
             <arg name="image_height" value="720" />
