@@ -1,0 +1,25 @@
+<launch>
+    <arg name="device" />
+    <arg name="camera_name" />
+    <arg name="image_width" />
+    <arg name="image_height" />
+
+    <group ns="$(arg camera_name)">
+        <node name="gscam_driver_v4l" pkg="gscam" type="gscam">
+            <param name="camera_name" value="$(arg camera_name)"/>
+            <param name="gscam_config" value="
+                  v4l2src device=$(arg device) do-timestamp=true
+                ! image/jpeg, width=$(arg image_width), height=$(arg image_height)
+                ! nvjpegdec
+                ! video/x-raw,format=I420
+                ! nvvidconv
+                ! video/x-raw(memory:NVMM),format=RGBA
+                ! nvvidconv
+                ! video/x-raw,format=RGBA" />
+
+            <param name="use_gst_timestamps" value="true"/>
+            <param name="frame_id" value="$(arg camera_name)_optical"/>
+            <param name="sync_sink" value="false"/>
+        </node>
+    </group>
+</launch>

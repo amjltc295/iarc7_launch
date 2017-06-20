@@ -13,4 +13,6 @@
     </include>
 
     <include file="$(find iarc7_launch)/launch/localization.launch" />
+
+    <include file="$(find iarc7_vision)/launch/vision_node.launch" />
 </launch>

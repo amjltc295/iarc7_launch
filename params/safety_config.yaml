@@ -1,4 +1,6 @@
 safety_bonds:
+    absolute_vel_from_switches:
+        priority: 40
     fc_comms_msp:
         priority: 50
     low_level_motion:

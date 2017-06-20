@@ -20,6 +20,13 @@
             <param name="port" value="/dev/ttyS0" />
             <param name="baud" value="115200" />
         </node>
+
+        <include file="$(find iarc7_launch)/launch/camera.launch">
+            <arg name="device" value="/dev/v4l/by-id/usb-046d_HD_Pro_Webcam_C920_51FE20EF-video-index0" />
+            <arg name="camera_name" value="bottom_camera" />
+            <arg name="image_width" value="1280" />
+            <arg name="image_height" value="720" />
+        </include>
     </group>
     <!-- endif -->
 
@@ -29,4 +36,7 @@
     <include file="$(find iarc7_safety)/launch/iarc7_safety.launch">
         <arg name="bond_id_namespace" value="$(arg bond_id_namespace)" />
     </include>
+
+    <node name="absolute_vel_from_switches" pkg="iarc7_sensors" type="absolute_velocity_from_switches.py" />
+
 </launch>
