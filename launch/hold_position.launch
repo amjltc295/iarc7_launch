@@ -1,0 +1,11 @@
+<launch>
+    <arg name="sim" default="false" doc="true if we are running in the sim" />
+    <node name="hold_position_abstract" pkg="iarc7_abstract" type="hold_position.py" />
+    <param name="safety_bonds/hold_position_abstract/form_bond" value="true" />
+
+    <include file="$(find iarc7_launch)/launch/main.launch">
+        <arg name="sim" value="$(arg sim)" />
+    </include>
+
+</launch>
+
