@@ -1,0 +1,24 @@
+<launch>
+    <arg name="bond_id_namespace" default="safety_bonds" />
+
+    <include file="$(find iarc7_fc_comms)/launch/fc_comms_msp.launch">
+        <arg name="bond_id_namespace" value="$(arg bond_id_namespace)" />
+    </include>
+    <param name="/fc_comms_msp/calibrate_accelerometer" value="false" />
+    <param name="/fc_comms_msp/publish_fc_battery" value="true" />
+
+    <node pkg="rosserial_python" type="serial_node.py"
+        name="teensy_serial">
+        <param name="port" value="/dev/ttyUSB0" />
+        <param name="baud" value="57600" />
+    </node>
+
+    <rosparam command="delete" param="$(arg bond_id_namespace)" />
+    <rosparam command="load"
+        file="$(find iarc7_launch)/params/safety_config.yaml" />
+    <include file="$(find iarc7_safety)/launch/iarc7_safety.launch">
+        <arg name="bond_id_namespace" value="$(arg bond_id_namespace)" />
+    </include>
+
+    <node name="motors_test" pkg="iarc7_fc_comms" type="thrust_test.py" output="screen" cwd="node"/>
+</launch>
