@@ -17,4 +17,5 @@ safety_bonds:
         priority: 1000
     hold_position_abstract:
         priority: 1000
-
+    hit_roomba_abstract:
+        priority: 1000
