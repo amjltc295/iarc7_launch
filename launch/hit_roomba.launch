@@ -1,0 +1,10 @@
+<launch>
+    <arg name="sim" default="false" doc="true if we are running in the sim" />
+    <node name="hit_roomba_abstract" pkg="iarc7_abstract" type="hit_roomba.py" />
+    <param name="safety_bonds/hit_roomba_abstract/form_bond" value="true" />
+
+    <include file="$(find iarc7_launch)/launch/main.launch">
+        <arg name="sim" value="$(arg sim)" />
+    </include>
+
+</launch>
