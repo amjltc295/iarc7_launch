@@ -19,3 +19,5 @@ safety_bonds:
         priority: 1000
     hit_roomba_abstract:
         priority: 1000
+    velocity_test_abstract:
+        priority: 1000
