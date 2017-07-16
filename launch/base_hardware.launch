@@ -41,4 +41,7 @@
     <param name="$(arg bond_id_namespace)/absolute_switch_velocity_publisher/form_bond"
         value="true" />
 
+    <include file="$(find iarc7_sensors)/launch/orientation_filter.launch">
+        <arg name="bond_id_namespace" value="$(arg bond_id_namespace)" />
+    </include>
 </launch>
