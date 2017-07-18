@@ -141,7 +141,7 @@ pose2_queue_size: 500
 # pose2_rejection_threshold: 3
 pose2_nodelay: false
 
-twist0: absolute_vel
+twist0: absolute_vel2
 twist0_config: [false, false, false,
                 false, false, false,
                 true,  true,  true,
