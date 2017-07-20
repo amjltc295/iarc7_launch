@@ -9,7 +9,7 @@
             <param name="camera_name" value="$(arg camera_name)"/>
             <param name="gscam_config" value="
                   v4l2src device=$(arg device) do-timestamp=true
-                  ! image/jpeg, width=$(arg image_width), height=$(arg image_height), framerate=30/1
+                  ! image/jpeg, width=$(arg image_width), height=$(arg image_height), framerate=15/1
                 ! nvjpegdec
                 ! video/x-raw,format=I420
                 ! nvvidconv
