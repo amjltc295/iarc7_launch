@@ -7,6 +7,8 @@ safety_bonds:
         priority: 60
     orientation_filter:
         priority: 100
+    velocity_filter:
+        priority: 150
     low_level_motion:
         priority: 200
     motion_planner:
