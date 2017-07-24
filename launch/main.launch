@@ -20,6 +20,8 @@
         <arg name="platform" value="sim" if="$(arg sim)" />
     </include>
 
+    <include file="$(find iarc7_sensors)/launch/roomba_transform_filter.launch"/>
+
     <!-- if we need a fake motor publisher -->
     <group if="$(arg fake_bat)">
         <node name="fake_motor_pub" pkg="rostopic" type="rostopic" args="pub -s /motor_battery iarc7_msgs/Float64Stamped &quot;{'header': auto, 'data': 21.0}&quot; -r 10" />
