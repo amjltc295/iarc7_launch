@@ -15,11 +15,11 @@
 
     <include file="$(find iarc7_launch)/launch/localization.launch" />
 
-    <!--
+
     <include file="$(find iarc7_vision)/launch/vision_node.launch" >
         <arg name="platform" value="1.0" unless="$(arg sim)" />
         <arg name="platform" value="sim" if="$(arg sim)" />
-    </include> -->
+    </include>
 
     <include file="$(find iarc7_sensors)/launch/vel_filter.launch" />
 
