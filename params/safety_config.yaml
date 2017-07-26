@@ -31,3 +31,5 @@ safety_bonds:
         priority: 1000
     roomba_request_executer_test_abstract:
         priority: 1000
+    competition_demo_abstract:
+        priority: 1000
