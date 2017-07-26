@@ -29,3 +29,5 @@ safety_bonds:
         priority: 1000
     block_roomba_abstract: 
         priority: 1000
+    competition_demo_abstract:
+        priority: 1000

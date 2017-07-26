@@ -1,0 +1,10 @@
+<launch>
+    <arg name="sim" default="false" doc="true if we are running in the sim" />
+    <node name="competition_demo_abstract" pkg="iarc7_abstract" type="competition_demo.py" />
+    <param name="safety_bonds/competition_demo_abstract/form_bond" value="true" />
+
+    <include file="$(find iarc7_launch)/launch/main.launch">
+        <arg name="sim" value="$(arg sim)" />
+    </include>
+
+</launch>
