@@ -5,39 +5,39 @@
 
     <node name="lidar_static_pub" pkg="tf2_ros"
         type="static_transform_publisher"
-        args="-0.23 0 -0.02 0 1.5708 0 /quad /lidarlite" />
+        args="0 -0.23 -0.02 0 1.5708 0 /quad /lidarlite" />
 
     <node name="short_lidar_static_pub" pkg="tf2_ros"
         type="static_transform_publisher"
-        args="0 0.43 0.0275 0 1.5708 0 /quad /short_distance_lidar" />
+        args="-0.43 0 0.0275 0 1.5708 0 /quad /short_distance_lidar" />
 
     <node name="rplidar_static_pub" pkg="tf2_ros"
         type="static_transform_publisher"
-        args="0 0 -0.042 0.785 0 3.1415 /quad /laser" />
+        args="0 0 -0.042 -0.785 0 3.1415 /quad /laser" />
 
     <node name="ground_plane_static_pub" pkg="tf2_ros"
         type="static_transform_publisher"
-        args="0 0 -0.23 0 0 0 /quad /base_footprint" />
+        args="0 0 -0.245 0 0 0 /quad /base_footprint" />
 
     <node name="foot1_static_pub" pkg="tf2_ros"
         type="static_transform_publisher"
-        args="0.265 0.265 0 0 0 0 /base_footprint /foot1 " />
+        args="0.37 0 0 0 0 0 /base_footprint /foot1 " />
 
     <node name="foot2_static_pub" pkg="tf2_ros"
         type="static_transform_publisher"
-        args="-0.265 0.265 0 0 0 0 /base_footprint /foot2 " />
+        args="-0.37 0 0 0 0 0 /base_footprint /foot2 " />
 
     <node name="foot3_static_pub" pkg="tf2_ros"
         type="static_transform_publisher"
-        args="0.265 -0.265 0 0 0 0 /base_footprint /foot3 " />
+        args="0 0.37 0 0 0 0 /base_footprint /foot3 " />
 
     <node name="foot4_static_pub" pkg="tf2_ros"
         type="static_transform_publisher"
-        args="-0.265 -0.265 0 0 0 0 /base_footprint /foot4 " />
+        args="0 -0.37 0 0 0 0 /base_footprint /foot4 " />
 
     <node name="bottom_camera_static_pub" pkg="tf2_ros"
         type="static_transform_publisher"
-        args="0 -0.256 -0.005 1.5708 0 3.1415 /quad /bottom_camera_optical" />
+        args="0.14 0 -0.005 3.1415 0 3.1415 /quad /bottom_camera_optical" />
 
     <node name="front_left_camera_static_pub" pkg="tf2_ros"
         type="static_transform_publisher"
