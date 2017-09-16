@@ -3,7 +3,7 @@
     <arg name="sim" default="false" doc="true if we are running in the sim" />
     <arg name="fake_bat" default="false" doc="create a fake motor battery publisher" />
 
-    <include file="$(iarc7_launch)/launch/passive_stack.launch">
+    <include file="$(find iarc7_launch)/launch/passive_stack.launch">
         <arg name="bond_id_namespace" value="$(arg bond_id_namespace)" />
         <arg name="sim" value="$(arg sim)" />
         <arg name="fake_bat" value="$(arg fake_bat)" />
