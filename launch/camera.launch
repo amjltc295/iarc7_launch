@@ -3,6 +3,7 @@
     <arg name="camera_name" />
     <arg name="image_width" />
     <arg name="image_height" />
+_   <arg name="image_timestamp_offset" />
 
     <group ns="$(arg camera_name)">
         <node name="gscam_driver_v4l" pkg="gscam" type="gscam">
@@ -20,6 +21,7 @@
             <param name="use_gst_timestamps" value="true"/>
             <param name="frame_id" value="$(arg camera_name)_optical"/>
             <param name="sync_sink" value="false"/>
+            <param name="timestamp_offset" value="$(arg image_timestamp_offset)"/>
         </node>
     </group>
 </launch>

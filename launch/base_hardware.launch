@@ -31,6 +31,7 @@
             <arg name="camera_name" value="bottom_camera" />
             <arg name="image_width" value="640" />
             <arg name="image_height" value="360" />
+            <arg name="image_timestamp_offset" value="-0.0" />
         </include>
     </group>
     <!-- endif -->
