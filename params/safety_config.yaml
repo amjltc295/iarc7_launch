@@ -29,5 +29,5 @@ safety_bonds:
         priority: 1000
     block_roomba_abstract: 
         priority: 1000
-    game:
+    roomba_controller_test_abstract:
         priority: 1000
