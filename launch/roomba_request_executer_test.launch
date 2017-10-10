@@ -1,0 +1,10 @@
+<launch>
+    <arg name="sim" default="false" doc="true if we are running in the sim" />
+    <node name="roomba_request_executer_test_abstract" pkg="iarc7_abstract" type="roomba_request_executer_test.py" />
+    <param name="safety_bonds/roomba_request_executer_test_abstract/form_bond" value="true" />
+
+    <include file="$(find iarc7_launch)/launch/main.launch">
+        <arg name="sim" value="$(arg sim)" />
+    </include>
+
+</launch>
