@@ -42,12 +42,4 @@
     <include file="$(find iarc7_safety)/launch/iarc7_safety.launch">
         <arg name="bond_id_namespace" value="$(arg bond_id_namespace)" />
     </include>
-
-    <node name="absolute_vel_from_switches" pkg="iarc7_sensors" type="absolute_velocity_from_switches.py" />
-    <param name="$(arg bond_id_namespace)/absolute_switch_velocity_publisher/form_bond"
-        value="true" />
-
-    <include file="$(find iarc7_sensors)/launch/orientation_filter.launch">
-        <arg name="bond_id_namespace" value="$(arg bond_id_namespace)" />
-    </include>
 </launch>
