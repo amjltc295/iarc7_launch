@@ -19,11 +19,6 @@
 
     <include file="$(find iarc7_sensors)/launch/roomba_transform_filter.launch"/>
 
-    <include file="$(find iarc7_sensors)/launch/vel_filter.launch">
-        <arg name="bond_id_namespace" value="$(arg bond_id_namespace)" />
-        <arg name="position_passthrough" value="$(arg sim)" />
-    </include>
-
     <!-- if we need a fake battery publisher -->
     <group if="$(arg fake_bat)">
         <node name="fake_motor_pub"
