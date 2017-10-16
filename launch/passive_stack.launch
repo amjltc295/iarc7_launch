@@ -12,7 +12,7 @@
 
     <include file="$(find iarc7_sensors)/launch/obstacle_detector.launch" />
 
-    <include file="$(find iarc7_vision)/launch/vision_node.launch" >
+    <include file="$(find iarc7_vision)/launch/vision_node.launch">
         <arg name="platform" value="1.0" unless="$(arg sim)" />
         <arg name="platform" value="sim" if="$(arg sim)" />
     </include>
@@ -26,7 +26,12 @@
 
     <!-- if we need a fake battery publisher -->
     <group if="$(arg fake_bat)">
-        <node name="fake_motor_pub" pkg="rostopic" type="rostopic" args="pub -s /motor_battery iarc7_msgs/Float64Stamped &quot;{'header': auto, 'data': 21.0}&quot; -r 10" />
+        <node name="fake_motor_pub"
+            pkg="rostopic"
+            type="rostopic"
+            args="pub -s /motor_battery iarc7_msgs/Float64Stamped
+                    &quot;{'header': auto, 'data': 21.0}&quot;
+                    -r 10" />
     </group>
     <!-- endif -->
 
