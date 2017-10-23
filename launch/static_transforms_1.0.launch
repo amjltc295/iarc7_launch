@@ -37,7 +37,7 @@
 
     <node name="bottom_camera_static_pub" pkg="tf2_ros"
         type="static_transform_publisher"
-        args="0.14 0 -0.005 -1.5707 0 3.1415 /quad /bottom_camera_optical" />
+        args="0 0 -0.21 -1.5707 0 3.1415 /quad /bottom_camera_optical" />
 
     <node name="front_left_camera_static_pub" pkg="tf2_ros"
         type="static_transform_publisher"
